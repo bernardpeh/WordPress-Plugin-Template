@@ -12,7 +12,7 @@ if ( !current_user_can( 'install_plugins' ) )
         wp_die( 'You do not have permission to run this script.' );
 
 // Enter our plugin uninstall script below
-require_once( 'classes/Class-Wordpress-Plugin-Template-Settings.php' );
+require_once( 'classes/Class-WordPress-Plugin-Template-Settings.php' );
 $page_slug = WordPress_Plugin_Template_Settings::$page_slug;
 $check = get_option($page_slug.'_menu_uninstall');
 if ($check) {

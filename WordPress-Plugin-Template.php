@@ -11,9 +11,9 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Include plugin class files
-require_once( 'classes/Class-Wordpress-Plugin-Template.php' );
-require_once( 'classes/Class-Wordpress-Plugin-Template-Settings.php' );
-require_once( 'classes/post-types/Class-Wordpress-Plugin-Template-Post-Type.php' );
+require_once( 'classes/Class-WordPress-Plugin-Template.php' );
+require_once( 'classes/Class-WordPress-Plugin-Template-Settings.php' );
+require_once( 'classes/post-types/Class-WordPress-Plugin-Template-Post-Type.php' );
 
 // Instantiate necessary classes
 global $plugin_obj;
