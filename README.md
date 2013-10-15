@@ -1,6 +1,6 @@
-# Introduction # 
+# Introduction #
 
-WordPress Plugin Template is an object oriented boilerplate for creating a simple wordpress plugin quickly. Kickstart the creation of the plugin with a shell script. Originally forked from (https://github.com/hlashbrooke/WordPress-Plugin-Template)
+WordPress Plugin Template is an object oriented boilerplate for creating a simple wordpress plugin quickly. The whole idea is to kickstart the creation of the plugin with a shell script. Originally forked from (https://github.com/hlashbrooke/WordPress-Plugin-Template)
 
 ## Installation ##
 
