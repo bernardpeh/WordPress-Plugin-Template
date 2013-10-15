@@ -3,20 +3,17 @@
  * Plugin Name: WordPress Plugin Template
  * Version: 1.0
  * Plugin URI: 
- * Description:
- * Author: 
- * Author URI: 
- * Requires at least: 
- * Tested up to: 
- * 
+ * Description: Your own description here
+ * Author: Bernard Peh
+ * Author URI: http://www.azhowto.com
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // Include plugin class files
-require_once( 'classes/class-wordpress-plugin-template.php' );
-require_once( 'classes/class-wordpress-plugin-template-settings.php' );
-require_once( 'classes/post-types/class-wordpress-plugin-template-post_type.php' );
+require_once( 'classes/Class-Wordpress-Plugin-Template.php' );
+require_once( 'classes/Class-Wordpress-Plugin-Template-Settings.php' );
+require_once( 'classes/post-types/Class-Wordpress-Plugin-Template-Post-Type.php' );
 
 // Instantiate necessary classes
 global $plugin_obj;

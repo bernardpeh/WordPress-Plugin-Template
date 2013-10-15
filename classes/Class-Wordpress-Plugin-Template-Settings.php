@@ -7,7 +7,7 @@ class WordPress_Plugin_Template_Settings {
 	private $file;
 	private $assets_dir;
 	private $assets_url;
-	// make it unique!
+	// make it unique! use underscore.
 	public static $page_slug = "my_page_name";
 	public static $page_title = "My Page Title";
 
