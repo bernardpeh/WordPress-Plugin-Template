@@ -29,5 +29,6 @@ find ../ -name '*.php' -type f | while read s; do sed -e "s/WordPress Plugin Tem
 # rename this project dir
 mv ../WordPress-Plugin-Template ../$FILE_NAME
 
+echo 'All done. Now copy this dir to your wordpress dir and activate it.'
 
-echo 'All done. Now copy this dir to your wordpress dir and activate it."
+exit 0
