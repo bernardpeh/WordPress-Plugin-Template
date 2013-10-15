@@ -12,7 +12,7 @@ then
 fi
 
 FILE_NAME=`echo $1 | sed 's/_/-/g'`
-CLASS_FILE_NAME=class-$FILE_NAME
+CLASS_FILE_NAME=Class-$FILE_NAME
 OBJ_NAME=$1;
 PLUGIN_NAME=`echo $1 | sed 's/_/ /g'`
 
