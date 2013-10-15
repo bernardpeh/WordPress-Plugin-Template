@@ -57,7 +57,7 @@ class WordPress_Plugin_Template_Post_Type {
 			'not_found' =>  sprintf( __( 'No %s Found' , 'plugin_textdomain' ), __( 'Posts' , 'plugin_textdomain' ) ),
 			'not_found_in_trash' => sprintf( __( 'No %s Found In Trash' , 'plugin_textdomain' ), __( 'Posts' , 'plugin_textdomain' ) ),
 			'parent_item_colon' => '',
-			'menu_name' => __( '*Posts' , 'plugin_textdomain' )
+			'menu_name' => __( 'My Custom Posts' , 'plugin_textdomain' )
 		);
 		
 		$args = array(

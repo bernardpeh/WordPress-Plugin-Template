@@ -1,15 +1,26 @@
 #!/bin/bash
 
+if [ `dirname $0` != "./setup" ]
+then
+  echo "
+  Please run this script one level above the setup dir. After you download the files,
+  cd WordPress-Plugin-Template
+  ./setup/setup.sh
+  "
+  exit 1;
+fi
+
 if [ $# -ne 3 ]
 then
   echo "
   This simple script sets up the naming convention of all files and classes within this directory to the name of the plugin you specify. 
-  Do not call this script from outside the setup dir. Use UNDERSCORE instead of dash for spacing and Camelcase. Eg,
-        
-  Usage: ./setup MY_Cool_Project my_page_slug "My Page Title"
+  Run the command using using this convention:
+    
+  Usage: ./setup/setup.sh MY_Cool_Project my_page_name "My Page Title"
     "
-  exit;
+  exit 1;
 fi
+
 
 FILE_NAME=`echo $1 | sed 's/_/-/g'`
 CLASS_FILE_NAME=Class-$FILE_NAME

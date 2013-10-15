@@ -8,8 +8,8 @@ class WordPress_Plugin_Template_Settings {
 	private $assets_dir;
 	private $assets_url;
 	// make it unique! use underscore.
-	public static $page_slug = "Page_Name";
-	public static $page_title = "Page_Title";
+	public static $page_slug = "PAGE_SLUG";
+	public static $page_title = "PAGE_TITLE";
 
 	public function __construct( $file ) {
 		$this->dir = dirname( $file );
@@ -50,7 +50,7 @@ class WordPress_Plugin_Template_Settings {
 		add_settings_field( self::$page_slug.'_menu_1' , __( 'menu item 1' , 'plugin_textdomain' ) , array( &$this , 'menu_1' )  , self::$page_slug , 'main_settings' );
 		add_settings_field( self::$page_slug.'_menu_uninstall' , __( 'menu item 2' , 'plugin_textdomain' ) , array( &$this , 'menu_uninstall' )  , self::$page_slug , 'main_settings' );
 
-		// Register/save form settings fields
+		// Register/save form settings fields. Also remember to look at uninstall.php for var. defined here.
 		// register_setting( $option_group, $option_name, $sanitize_callback );
 		register_setting( self::$page_slug , self::$page_slug.'_menu_1' , array( &$this , 'validate_field' ) );
 		register_setting( self::$page_slug , self::$page_slug.'_menu_uninstall' , array( &$this , 'validate_field' ) );
@@ -75,7 +75,7 @@ class WordPress_Plugin_Template_Settings {
 		}
 
 	public function menu_uninstall() {
-		$check = get_option(self::$page_slug.'_uninstall');
+		$check = get_option(self::$page_slug.'_menu_uninstall');
 		echo '<p><input id="'.self::$page_slug.'_menu_uninstall" type="checkbox" name="'.self::$page_slug.'_menu_uninstall" type="checkbox" ';
 		checked($check,'on');
 		echo '/><br/><label for="slug"><span class="description">' . __( 'check this box if you want to delete the plugin data after uninstalling this plugin' , 'plugin_textdomain' ) . '</span></label></p>';
