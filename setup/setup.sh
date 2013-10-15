@@ -28,19 +28,20 @@ OBJ_NAME=$1;
 PLUGIN_NAME=`echo $1 | sed 's/_/ /g'`
 
 # rename the main file
-mv ../WordPress-Plugin-Template/WordPress-Plugin-Template.php ../WordPress-Plugin-Template/$FILE_NAME.php
+mv WordPress-Plugin-Template/WordPress-Plugin-Template.php WordPress-Plugin-Template/$FILE_NAME.php
 
 # rename classes file
-mv ../WordPress-Plugin-Template/classes/Class-WordPress-Plugin-Template.php  ../WordPress-Plugin-Template/classes/$CLASS_FILE_NAME.php
-mv ../WordPress-Plugin-Template/classes/Class-WordPress-Plugin-Template-Settings.php ../WordPress-Plugin-Template/classes/$CLASS_FILE_NAME-Settings.php
-mv ../WordPress-Plugin-Template/classes/post-types/Class-WordPress-Plugin-Template-Post-Type.php ../WordPress-Plugin-Template/classes/post-types/$CLASS_FILE_NAME-Post-Type.php
+mv WordPress-Plugin-Template/classes/Class-WordPress-Plugin-Template.php  WordPress-Plugin-Template/classes/$CLASS_FILE_NAME.php
+mv WordPress-Plugin-Template/classes/Class-WordPress-Plugin-Template-Settings.php WordPress-Plugin-Template/classes/$CLASS_FILE_NAME-Settings.php
+mv WordPress-Plugin-Template/classes/post-types/Class-WordPress-Plugin-Template-Post-Type.php WordPress-Plugin-Template/classes/post-types/$CLASS_FILE_NAME-Post-Type.php
 
-find ../ -name '*.php' -type f | while read s; do sed -e "s/WordPress Plugin Template/$PLUGIN_NAME/g" -e "s/Class-WordPress-Plugin-Template/$CLASS_FILE_NAME/g" -e "s/WordPress_Plugin_Template/$OBJ_NAME/g" -i $s; done
+find . -name '*.php' -type f | while read s; do sed -e "s/WordPress Plugin Template/$PLUGIN_NAME/g" -e "s/Class-WordPress-Plugin-Template/$CLASS_FILE_NAME/g" -e "s/WordPress_Plugin_Template/$OBJ_NAME/g" -i $s; done
 
 # replace page slug and title
-sed -e "s/PAGE_SLUG/$2/g" -e "s/PAGE_TITLE/$3/g" -i ../WordPress-Plugin-Template/classes/$CLASS_FILE_NAME-Settings.php
-# rename this project dir
-mv ../WordPress-Plugin-Template ../$FILE_NAME
+sed -e "s/PAGE_SLUG/$2/g" -e "s/PAGE_TITLE/$3/g" -i WordPress-Plugin-Template/classes/$CLASS_FILE_NAME-Settings.php
+
+# finally, rename this project dir
+mv WordPress-Plugin-Template $FILE_NAME
 
 echo 'All done. Now copy this dir to your wordpress dir and activate it.'
 
