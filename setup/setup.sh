@@ -22,7 +22,7 @@ mv ../WordPress-Plugin-Template/WordPress-Plugin-Template.php ../WordPress-Plugi
 # rename classes file
 mv ../WordPress-Plugin-Template/classes/Class-WordPress-Plugin-Template.php  ../WordPress-Plugin-Template/classes/$CLASS_FILE_NAME.php
 mv ../WordPress-Plugin-Template/classes/Class-WordPress-Plugin-Template-Settings.php ../WordPress-Plugin-Template/classes/$CLASS_FILE_NAME-Settings.php
-mv ../WordPress-Plugin-Template/classes/post-types/Class-WordPress-Plugin-Template-Post-Type.php ../WordPress-Plugin-Template/classes/post-types/$CLASS_FILE_NAME-Post_Type.php
+mv ../WordPress-Plugin-Template/classes/post-types/Class-WordPress-Plugin-Template-Post-Type.php ../WordPress-Plugin-Template/classes/post-types/$CLASS_FILE_NAME-Post-Type.php
 
 find ../ -name '*.php' -type f | while read s; do sed -e "s/WordPress Plugin Template/$PLUGIN_NAME/g" -e "s/Class-WordPress-Plugin-Template/$CLASS_FILE_NAME/g" -e "s/WordPress_Plugin_Template/$OBJ_NAME/g" -i $s; done
 
