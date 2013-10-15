@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]
+if [ $# -ne 3 ]
 then
   echo "
   This simple script sets up the naming convention of all files and classes within this directory to the name of the plugin you specify. 
   Do not call this script from outside the setup dir. Use UNDERSCORE instead of dash for spacing and Camelcase. Eg,
         
-  Usage: ./setup MY_Cool_Project
+  Usage: ./setup MY_Cool_Project my_page_slug "My Page Title"
     "
   exit;
 fi
@@ -26,6 +26,8 @@ mv ../WordPress-Plugin-Template/classes/post-types/Class-WordPress-Plugin-Templa
 
 find ../ -name '*.php' -type f | while read s; do sed -e "s/WordPress Plugin Template/$PLUGIN_NAME/g" -e "s/Class-WordPress-Plugin-Template/$CLASS_FILE_NAME/g" -e "s/WordPress_Plugin_Template/$OBJ_NAME/g" -i $s; done
 
+# replace page slug and title
+sed -e "s/PAGE_SLUG/$2/g" -e "s/PAGE_TITLE/$3/g" -i ../WordPress-Plugin-Template/classes/$CLASS_FILE_NAME-Settings.php
 # rename this project dir
 mv ../WordPress-Plugin-Template ../$FILE_NAME
 

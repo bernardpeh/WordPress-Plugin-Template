@@ -8,8 +8,8 @@ class WordPress_Plugin_Template_Settings {
 	private $assets_dir;
 	private $assets_url;
 	// make it unique! use underscore.
-	public static $page_slug = "my_page_name";
-	public static $page_title = "My Page Title";
+	public static $page_slug = "Page_Name";
+	public static $page_title = "Page_Title";
 
 	public function __construct( $file ) {
 		$this->dir = dirname( $file );
