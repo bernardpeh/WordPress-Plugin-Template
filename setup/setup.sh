@@ -45,6 +45,6 @@ sed -e "s/PAGE_SLUG/$PAGE_SLUG/g" -e "s/PAGE_TITLE/$PAGE_TITLE/g" -i WordPress-P
 # finally, rename this project dir
 mv WordPress-Plugin-Template $FILE_NAME
 
-echo 'All done. Now copy this dir to your wordpress dir and activate it.'
+echo "All done. Now copy the $FILE_NAME dir to your wordpress plugin dir and activate it."
 
 exit 0
