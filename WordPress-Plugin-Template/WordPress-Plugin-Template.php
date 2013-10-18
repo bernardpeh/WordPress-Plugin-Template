@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: WordPress Plugin Template
- * Version: 1.0
+ * Version: 1.1
  * Plugin URI: 
  * Description: Your own description here
  * Author: Your Name
@@ -16,11 +16,10 @@ require_once( 'classes/Class-WordPress-Plugin-Template-Settings.php' );
 require_once( 'classes/post-types/Class-WordPress-Plugin-Template-Post-Type.php' );
 
 // Instantiate necessary classes
-global $plugin_obj;
-$plugin_obj = new WordPress_Plugin_Template( __FILE__ );
-$plugin_settings_obj = new WordPress_Plugin_Template_Settings( __FILE__ );
+$template = new WordPress_Plugin_Template( __FILE__ );
+$settings = new WordPress_Plugin_Template_Settings( __FILE__ );
 // uncomment this line to add own custom post type
-// $plugin_post_type_obj = new WordPress_Plugin_Template_Post_Type( __FILE__ );
+// $post_type = new WordPress_Plugin_Template_Post_Type( __FILE__ );
 
-register_activation_hook( __FILE__, array($plugin_settings_obj,'activate') );
-register_deactivation_hook( __FILE__, array($plugin_settings_obj,'deactivate') );
+register_activation_hook( __FILE__, array($settings,'activate') );
+register_deactivation_hook( __FILE__, array($settings,'deactivate') );

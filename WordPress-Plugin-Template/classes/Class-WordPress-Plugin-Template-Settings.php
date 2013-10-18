@@ -17,15 +17,14 @@ class WordPress_Plugin_Template_Settings {
 		$this->assets_dir = trailingslashit( $this->dir ) . 'assets';
 		$this->assets_url = esc_url( trailingslashit( plugins_url( '/assets/', $file ) ) );
 
-		// Register plugin settings
-		add_action( 'admin_init' , array( &$this , 'register_settings' ) );
-
-		// Add settings page to menu
-		add_action( 'admin_menu' , array( &$this , 'add_menu_item' ) );
-
-		// Add settings link to plugins page
-		add_filter( 'plugin_action_links_' . plugin_basename( $this->file ) , array( &$this , 'add_settings_link' ) );
-
+		if (is_admin()) {
+			// Register plugin settings
+			add_action( 'admin_init' , array( &$this , 'register_settings' ) );
+			// Add settings page to menu
+			add_action( 'admin_menu' , array( &$this , 'add_menu_item' ) );
+			// Add settings link to plugins page
+			add_filter( 'plugin_action_links_' . plugin_basename( $this->file ) , array( &$this , 'add_settings_link' ) );
+		}
 	}
 	
 	public function add_menu_item() {
